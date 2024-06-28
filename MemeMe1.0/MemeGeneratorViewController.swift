@@ -20,9 +20,7 @@ class MemeGeneratorViewController: UIViewController, UIImagePickerControllerDele
     @IBOutlet weak var toolbarTop: UIToolbar!
     @IBOutlet weak var buttonShare: UIBarButtonItem!
     
-    var meme: CustomMeme!
-    
-    var memeTextAttributes:[NSAttributedString.Key: Any] = [
+    let memeTextAttributes:[NSAttributedString.Key: Any] = [
         .font: UIFont(name: "HelveticaNeue-CondensedBlack", size: 50)!,
         .strokeColor: UIColor.black,
         .foregroundColor: UIColor.white,
@@ -77,7 +75,6 @@ class MemeGeneratorViewController: UIViewController, UIImagePickerControllerDele
                 print("Error sharing meme: \(error.localizedDescription)")
             }
         }
-        let meme = CustomMeme(upperText: upperTextField.text ?? "", lowerText: lowerTextGield.text ?? "", memeImage: memeImage)
         
     }
     
@@ -85,7 +82,7 @@ class MemeGeneratorViewController: UIViewController, UIImagePickerControllerDele
         
         buttonShare.isEnabled = false
         cameraButton.isEnabled = false
-        imageView.contentMode = .scaleAspectFill
+        imageView.contentMode = .scaleAspectFit
         configureTextField(upperTextField, with: memeTextAttributes)
         configureTextField(lowerTextGield, with: memeTextAttributes)
     }

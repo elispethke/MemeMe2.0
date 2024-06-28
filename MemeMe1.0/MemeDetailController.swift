@@ -15,8 +15,8 @@ class MemeDetailController: UIViewController {
     
     @IBOutlet weak var memeImageView: UIImageView!
     @IBOutlet weak var topLabel: UILabel!
-    
     @IBOutlet weak var bottomText: UILabel!
+    
     var meme: CustomMeme!
     
     override func viewWillAppear(_ animated: Bool) {
@@ -25,6 +25,7 @@ class MemeDetailController: UIViewController {
         self.bottomText.text = meme.lowerText
         self.memeImageView.image = meme.memeImage
         self.topLabel.text = meme.upperText
+        
         
     }
 }

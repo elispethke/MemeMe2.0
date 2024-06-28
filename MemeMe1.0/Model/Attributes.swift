@@ -10,7 +10,8 @@ import UIKit
 
 struct CustomMeme {
     
-    var upperText: String
-    var lowerText: String
-    var memeImage: UIImage
+    let upperText: String
+    let lowerText: String
+    let memeImage: UIImage
+    let originalImage: UIImage
 }
